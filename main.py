@@ -34,6 +34,11 @@ def speak(text):
 # function
 
 
+def fiveWOneH(query):
+    if ['apa', 'dimana', 'kapan', 'siapa', 'mengapa', 'kenapa', 'bagaimana'] in query.lower():
+        speak('helo')
+
+
 def wishMe():
     hours = int(datetime.datetime.now().hour)
     if hours >= 12 and hours < 12:
@@ -138,6 +143,16 @@ while i == True:
                             query_2.lower())
             print("This is what I found according to your search")
             speak("This is what I found according to your search")
+        elif 'dimana' in query_2.lower():
+            print("Searching Google...")
+            speak('Searching Google...')
+            query = query_2.replace("google", "")
+            print(query)
+            chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+            webbrowser.open("https://google.com/search?q=%s" %
+                            query_2.lower())
+            print("This is what I found according to your search")
+            speak("This is what I found according to your search")
         elif 'bagaimana' in query_2.lower():
             print("Searching Google...")
             speak('Searching Google...')
@@ -165,6 +180,18 @@ while i == True:
             webbrowser.open("https://google.com/search?q=%s" %
                             query_2.lower())
             speak(query_2.lower())
+        elif 'kenapa' in query_2.lower():
+            print('Searching Google ...')
+            speak('Searching Google ...')
+            query = query_2.replace("google", "")
+            query = query_2.replace('kapan', '')
+            print(query)
+            chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+            webbrowser.open("https://google.com/search?q=%s" %
+                            query_2.lower())
+            print("This is what I found according to your search")
+            speak("This is what I found according to your search")
+
     elif "lagu" in query.lower():
         chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
         webbrowser.open("https://www.youtube.com/results?search_query=%s" %
@@ -177,6 +204,65 @@ while i == True:
         speak(location)
         webbrowser.open(
             "https://www.google.nl/maps/place/" + location + "")
+    elif 'apa' in query.lower():
+        print("Searching Google...")
+        speak('Searching Google...')
+        query = query.replace("google", "")
+        print(query)
+        chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+        webbrowser.open("https://google.com/search?q=%s" %
+                        query.lower())
+        print("This is what I found according to your search")
+        speak("This is what I found according to your search")
+    elif 'dimana' in query.lower():
+        print("Searching Google...")
+        speak('Searching Google...')
+        query = query.replace("google", "")
+        print(query)
+        chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+        webbrowser.open("https://google.com/search?q=%s" %
+                        query.lower())
+        print("This is what I found according to your search")
+        speak("This is what I found according to your search")
+    elif 'bagaimana' in query.lower():
+        print("Searching Google...")
+        speak('Searching Google...')
+        query = query.replace("google", "")
+        print(query)
+        chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+        webbrowser.open("https://google.com/search?q=%s" %
+                        query.lower())
+        print("This is what I found according to your search")
+        speak("This is what I found according to your search")
+    elif 'kapan' in query.lower():
+        print('Searching Google ...')
+        speak('Searching Google ...')
+        query = query.replace("google", "")
+        query = query.replace('kapan', '')
+        print(query)
+        chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+        webbrowser.open("https://google.com/search?q=%s" %
+                        query.lower())
+        print("This is what I found according to your search")
+        speak("This is what I found according to your search")
+    elif "carikan" in query.lower():
+        url = 'google.com/search?q=' + query
+        chrome_path = "C:/Program Files/Google/Chrome/Application/chrome.exe %s"
+        webbrowser.open("https://google.com/search?q=%s" %
+                        query.lower())
+        speak(query.lower())
+    elif 'kenapa' in query.lower():
+        print('Searching Google ...')
+        speak('Searching Google ...')
+        query = query.replace("google", "")
+        query = query.replace('kapan', '')
+        print(query)
+        chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+        webbrowser.open("https://google.com/search?q=%s" %
+                        query.lower())
+        print("This is what I found according to your search")
+        speak("This is what I found according to your search")
+
     else:
         speak("i cant hear you, can you repeat please ?")
         i = True
