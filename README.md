@@ -1,7 +1,9 @@
 # DESCRIPTION
 Name Virtual Assistent : Wawah
 <br>
-Author : Mahardika Kessuma Denie
+Kelompok AI
+<br>
+Universitas Adhirajasa Reswara Sanjaya
 
 ## Instalations
 
