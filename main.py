@@ -37,11 +37,11 @@ def speak(text):
 def wishMe():
     hours = int(datetime.datetime.now().hour)
     if hours >= 12 and hours < 12:
-        speak("good morning " + MASTER)
+        speak("good morning {}".format(MASTER))
     elif hours >= 12 and hours < 18:
-        speak("Good AfterNoon " + MASTER)
+        speak("Good AfterNoon {}".format(MASTER))
     else:
-        speak("Good Evenning" + MASTER)
+        speak("Good Evenning {}".format(MASTER))
         speak("")
 
 # Microphone
@@ -142,6 +142,17 @@ while i == True:
             print("Searching Google...")
             speak('Searching Google...')
             query = query_2.replace("google", "")
+            print(query)
+            chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+            webbrowser.open("https://google.com/search?q=%s" %
+                            query_2.lower())
+            print("This is what I found according to your search")
+            speak("This is what I found according to your search")
+        elif 'kapan' in query_2.lower():
+            print('Searching Google ...')
+            speak('Searching Google ...')
+            query = query_2.replace("google", "")
+            query = query_2.replace('kapan', '')
             print(query)
             chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
             webbrowser.open("https://google.com/search?q=%s" %
