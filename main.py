@@ -34,9 +34,16 @@ def speak(text):
 # function
 
 
-def fiveWOneH(query):
-    if ['apa', 'dimana', 'kapan', 'siapa', 'mengapa', 'kenapa', 'bagaimana'] in query.lower():
-        speak('helo')
+def fiveWOneH(query_2):
+    print("Searching Google...")
+    speak('Searching Google...')
+    query = query_2.replace("google", "")
+    print(query)
+    chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+    webbrowser.open("https://google.com/search?q=%s" %
+                    query_2.lower())
+    print("This is what I found according to your search")
+    speak("This is what I found according to your search")
 
 
 def wishMe():
